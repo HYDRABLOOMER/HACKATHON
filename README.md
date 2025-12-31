@@ -10,19 +10,19 @@ Documentation Index
 The documentaion for markdown files:
 
  1- Project Overview  
-📘 **[OVERVIEW.md](./OVERVIEW.md)**  
+**[OVERVIEW.md](./OVERVIEW.md)**  
 Explains the problem being addressed, the core insight behind EcoQuest, and the overall system purpose.
 
 2- Feature Breakdown  
-🧩 **[FEATURES.md](./FEATURES.md)**  
+**[FEATURES.md](./FEATURES.md)**  
 Detailed explanation of each system module, including task execution, verification, and aggregation.
 
 3- Data Flow & System Design  
-🔁 **[DATA_FLOW.md](./DATA_FLOW.md)**  
+**[DATA_FLOW.md](./DATA_FLOW.md)**  
 Textual Data Flow Diagrams (DFD) and technical flows showing how data moves through the system.
 
 4- Round 2 Improvements   
-🚀 **[ROUND2_IMPROVEMENTS.md](./ROUND2_IMPROVEMENTS.md)**  
+**[ROUND2_IMPROVEMENTS.md](./ROUND2_IMPROVEMENTS.md)**  
 Planned technical and system-level enhancements for the next round.
 
 
