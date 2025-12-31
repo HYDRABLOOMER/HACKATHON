@@ -7,7 +7,6 @@ citizen action → verification → storage → aggregation → feedback.
 
 Round 2 enhancements aim to **strengthen data credibility, expand institutional usability, and improve analytical depth**, without changing the core system architecture.
 
----
 
 ## 1. Replace Simulated Verification with Real AI Models
 
@@ -28,7 +27,6 @@ Round 2 enhancements aim to **strengthen data credibility, expand institutional 
 - Reduces moderator workload
 - Increases trust in generated data
 
----
 
 ## 2. Institutional Dashboards (NGO / Authority View)
 
@@ -46,7 +44,6 @@ Round 2 enhancements aim to **strengthen data credibility, expand institutional 
 - Converts raw participation data into decision-support tools
 - Makes EcoQuest useful beyond user engagement
 
----
 
 ## 3. Credibility & Trust Scoring for Users
 
@@ -65,7 +62,6 @@ Round 2 enhancements aim to **strengthen data credibility, expand institutional 
 - Discourages low-effort or spam participation
 - Enables differentiated access to higher-impact tasks
 
----
 
 ## 4. Advanced Aggregation & Hotspot Analytics
 
@@ -83,7 +79,6 @@ Round 2 enhancements aim to **strengthen data credibility, expand institutional 
 - Enables proactive, data-driven interventions
 - Moves system from descriptive to analytical
 
----
 
 ## 5. Expansion of Public Reporting System
 
@@ -99,7 +94,6 @@ Round 2 enhancements aim to **strengthen data credibility, expand institutional 
 - Improves accountability
 - Makes reporting data operationally useful
 
----
 
 ## 6. Civic Feedback & Sentiment Dashboards
 
@@ -115,7 +109,6 @@ Round 2 enhancements aim to **strengthen data credibility, expand institutional 
 - Adds qualitative context to quantitative data
 - Helps institutions understand public perception alongside ground reality
 
----
 
 ## 7. Mobile Application for Participation Density
 
@@ -133,7 +126,6 @@ Round 2 enhancements aim to **strengthen data credibility, expand institutional 
 - Increases participation frequency
 - Improves real-time data collection
 
----
 
 ## 8. Why These Improvements Matter
 
@@ -145,13 +137,4 @@ All Round 2 improvements:
 The focus remains consistent:
 > **Transform citizen participation into reliable, scalable environmental intelligence.**
 
----
 
-## 9. Summary
-
-Round 1 proves **system coherence**.  
-Round 2 strengthens **credibility, scale, and decision value**.
-
-Together, they position EcoQuest as a sustainable civic intelligence platform rather than a one-off engagement tool.
-
----
