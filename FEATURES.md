@@ -5,7 +5,7 @@
 
 This document explains the core features of EcoQuest, why they exist, and how they contribute to the overall system. Rather than treating EcoQuest as a collection of independent tools, we designed it as a single data pipeline where each component plays a specific role in generating reliable environmental insights.
 
-At a high level, EcoQuest consists of four aligned components:
+ EcoQuest consists of four major components:
 
 * **Task-Based Environment (Primary data generator)**
 * **Knowledge-Based Environment (Data quality calibration)**
@@ -18,11 +18,11 @@ At a high level, EcoQuest consists of four aligned components:
 
 ### *Primary Generator of Verified Environmental Action Data*
 
-The Task-Based Environment is the core of EcoQuest. It is where real-world environmental actions are performed, verified, and converted into structured data.
+The Task-Based Environment is the core feature of EcoQuest. It this the real-world environmental actions are performed, verified, and converted into a well structured data.
 
 ### **What it does**
 
-Users complete predefined environmental tasks such as cleanups, recycling drives, or tree planting. Each completed task produces a time-stamped, geo-tagged action record that contributes to aggregate environmental insights.
+Users complete predefined environmental tasks such as area cleanups, recycling drives, or tree planting. Each completed task produces a time-stamped, geo-tagged action record that contributes to aggregate environmental insights. User gets points for task completion.
 
 ### **Why it exists**
 
@@ -34,7 +34,7 @@ Most environmental efforts today disappear after execution. This module ensures 
 
 * Tasks are categorized (Waste, Water, Greenery, Energy, etc.)
 * Each task has clear evidence requirements and impact scope
-* Tasks are created and managed by NGOs, colleges, or partner organizations
+* Tasks are created and managed by NGOs, colleges, or other organizations
 
 #### **Scoring & EcoPoints**
 
@@ -66,7 +66,6 @@ These are designed to prevent demotivation while sustaining consistent participa
 
 Converts citizen effort into verified environmental action records that form the backbone of EcoQuest’s intelligence layer.
 
----
 
 ## **2. Knowledge-Based Environment**
 
@@ -76,7 +75,7 @@ The Knowledge-Based Environment is not designed as an exam or pure learning plat
 
 ### **What it does**
 
-Users engage with short, contextual learning content followed by lightweight quizzes tied to real environmental issues and current conditions.
+Users engage with short, contextual learning content followed by lightweight quizzes tied to real environmental issues and current conditions. A quiz is generated in which users can participate and compete in real time.
 
 ### **Why it exists**
 
@@ -113,7 +112,6 @@ Uninformed participation leads to noisy or misleading data. This module ensures 
 
 Improves data quality by ensuring contributors have contextual understanding before generating action or report data.
 
----
 
 ## **3. Public Reporting System**
 
@@ -155,7 +153,6 @@ Many environmental problems are recurring and hyper-local. Traditional inspectio
 
 Generates real-time, geo-tagged environmental risk signals that complement task-based action data.
 
----
 
 ## **4. Civic Feedback & Sentiment Layer**
 
@@ -202,7 +199,6 @@ Quantitative data shows what is happening. Sentiment data explains why. Together
 
 Adds qualitative context to verified action and report data, completing the intelligence loop.
 
----
 
 ## **Feature Prioritization (Round 1 vs Expansion)**
 
@@ -220,7 +216,6 @@ Adds qualitative context to verified action and report data, completing the inte
 * Large-scale opinion feeds
 * Event-based modules (Ecothons)
 
----
 
 ## **Final Design Philosophy**
 
@@ -231,5 +226,4 @@ Every feature exists to serve one goal:
 
 ### **Turn citizen participation into reliable environmental intelligence.**
 
----
 
