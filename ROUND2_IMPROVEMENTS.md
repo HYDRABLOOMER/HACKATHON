@@ -111,7 +111,7 @@ Round 2 enhancements aim to **strengthen data credibility, expand institutional 
 
 
 
-## 8. Why These Improvements Matter
+## 7. Why These Improvements Matter
 
 All Round 2 improvements:
 - Build directly on the Round 1 architecture
@@ -119,6 +119,6 @@ All Round 2 improvements:
 - Strengthen verification, analytics, and institutional usability
 
 The focus remains consistent:
-> **Transform citizen participation into reliable, scalable environmental intelligence.**
+ **Transform citizen participation into reliable, scalable environmental intelligence.**
 
 
