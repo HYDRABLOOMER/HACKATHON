@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Quiz - EcoQuest</title>
+    <link rel="stylesheet" href="../css/main.css">
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fecoquest4652back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.12"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+  </head>
+<body class="bg-background">
+    <!-- Navigation Header -->
+    <header class="bg-surface border-b border-border-surface sticky top-0 z-100">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" fill="#2D7D32"/>
+                        <path d="M20 8C18.5 8 17 9 17 11C17 13 18.5 14 20 14C21.5 14 23 13 23 11C23 9 21.5 8 20 8Z" fill="#4CAF50"/>
+                        <path d="M20 14C18 14 16 15.5 16 18V24C16 26.5 18 28 20 28C22 28 24 26.5 24 24V18C24 15.5 22 14 20 14Z" fill="#66BB6A"/>
+                        <ellipse cx="20" cy="30" rx="8" ry="2" fill="#1B5E20"/>
+                    </svg>
+                    <span class="text-2xl font-heading font-bold text-primary">EcoQuest</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="user_dashboard.html" class="px-4 py-2 rounded-lg text-text-secondary hover:bg-surface-50 transition-colors">Dashboard</a>
+                    <a href="knowledge_quiz.html" class="px-4 py-2 rounded-lg bg-primary-50 text-primary font-medium">Quiz</a>
+                    <a href="eco_tasks.html" class="px-4 py-2 rounded-lg text-text-secondary hover:bg-surface-50 transition-colors">Tasks</a>
+                    <a href="community_issues.html" class="px-4 py-2 rounded-lg text-text-secondary hover:bg-surface-50 transition-colors">Community</a>
+                    <a href="leaderboards.html" class="px-4 py-2 rounded-lg text-text-secondary hover:bg-surface-50 transition-colors">Leaderboards</a>
+                </div>
+
+                <!-- User Profile -->
+                <div class="flex items-center space-x-4">
+                    <button class="relative p-2 text-text-secondary hover:text-primary transition-colors">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_16a438811-1766990283880.png" alt="Notifications icon" class="w-6 h-6">
+                        <span class="absolute top-1 right-1 w-2 h-2 bg-accent rounded-full"></span>
+                    </button>
+                    <a href="user_profile.html" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_16e7b66b9-1766496824802.png" alt="User profile avatar" class="w-9 h-9 rounded-full object-cover border-2 border-primary">
+                        <span class="hidden sm:block text-sm font-medium text-text-primary">Alex Rivera</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Quiz Header Section -->
+        <div class="mb-8">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+                <div>
+                    <h1 class="text-4xl font-heading font-bold text-text-primary mb-2">Knowledge Quiz 🧠</h1>
+                    <p class="text-text-secondary">Test your environmental knowledge and earn EcoPoints</p>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <div class="flex items-center space-x-2 px-4 py-2 bg-primary-50 rounded-xl">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1629195c5-1766515855391.png" alt="Streak fire icon" class="w-5 h-5">
+                        <span class="font-heading font-semibold text-accent">23 Day Streak</span>
+                    </div>
+                    <div class="flex items-center space-x-2 px-4 py-2 bg-accent-50 rounded-xl">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_15b27ed88-1767175400432.png" alt="EcoPoints leaf icon" class="w-5 h-5">
+                        <span class="font-heading font-semibold text-primary">2,847 pts</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Category Tabs -->
+            <div class="flex flex-wrap gap-3 mb-6">
+                <button class="px-5 py-2.5 rounded-xl bg-primary text-white font-medium transition-all hover:bg-primary-600 flex items-center space-x-2">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1d29b43fd-1765799612559.png" alt="Climate category icon" class="w-5 h-5">
+                    <span>Climate Change</span>
+                </button>
+                <button class="px-5 py-2.5 rounded-xl bg-surface border border-border-surface text-text-secondary font-medium transition-all hover:bg-surface-50 flex items-center space-x-2">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1c266a213-1767175407944.png" alt="Pollution category icon" class="w-5 h-5">
+                    <span>Pollution</span>
+                </button>
+                <button class="px-5 py-2.5 rounded-xl bg-surface border border-border-surface text-text-secondary font-medium transition-all hover:bg-surface-50 flex items-center space-x-2">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14c813982-1767175408507.png" alt="Biodiversity category icon" class="w-5 h-5">
+                    <span>Biodiversity</span>
+                </button>
+                <button class="px-5 py-2.5 rounded-xl bg-surface border border-border-surface text-text-secondary font-medium transition-all hover:bg-surface-50 flex items-center space-x-2">
+                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1f4a3907f-1766911469137.png" alt="Sustainability category icon" class="w-5 h-5">
+                    <span>Sustainability</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Quiz Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Quiz Area (Left - 2 columns) -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Active Quiz Card -->
+                <div class="card bg-gradient-to-br from-primary-50 to-surface">
+                    <!-- Quiz Progress Bar -->
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center space-x-2">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_11c6d4336-1764781185336.png" alt="Progress icon" class="w-5 h-5">
+                                <span class="text-sm font-medium text-text-secondary">Question 5 of 10</span>
+                            </div>
+                            <div class="flex items-center space-x-2 px-3 py-1.5 bg-accent rounded-lg">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10a301dcf-1767101029048.png" alt="Timer icon" class="w-4 h-4">
+                                <span class="text-sm font-bold text-white">0:45</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar h-3">
+                            <div class="progress-fill bg-gradient-to-r from-primary to-primary-600" style="width: 50%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question Header -->
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="flex-1">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <span class="badge badge-primary">Climate Change</span>
+                                <span class="badge bg-accent-100 text-accent-700">Medium</span>
+                            </div>
+                            <h2 class="text-2xl font-heading font-semibold text-text-primary mb-2">What percentage of global greenhouse gas emissions comes from transportation?</h2>
+                        </div>
+                        <div class="flex flex-col items-center ml-4">
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1d1a979cf-1767175406080.png" alt="Points value icon" class="w-10 h-10 mb-1">
+                            <span class="text-sm font-bold text-accent">+50 pts</span>
+                        </div>
+                    </div>
+
+                    <!-- Question Image -->
+                    <div class="mb-6 rounded-xl overflow-hidden">
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_151ef8117-1767175407547.png" alt="Transportation vehicles on highway representing global emissions" class="w-full h-64 object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;">
+                    </div>
+
+                    <!-- Answer Options -->
+                    <div class="space-y-3 mb-6">
+                        <button class="w-full p-4 rounded-xl border-2 border-border-surface bg-surface hover:border-primary hover:bg-primary-50 transition-all text-left group">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-full bg-surface-100 group-hover:bg-primary group-hover:text-white flex items-center justify-center font-bold text-text-secondary transition-colors">A</div>
+                                    <span class="font-medium text-text-primary">15%</span>
+                                </div>
+                                <img src="https://images.unsplash.com/photo-1620653680869-51e51ee4d9a6" alt="Select option indicator" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </button>
+
+                        <button class="w-full p-4 rounded-xl border-2 border-primary bg-primary-50 transition-all text-left group">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">B</div>
+                                    <span class="font-medium text-text-primary">24%</span>
+                                </div>
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1a6ecc62f-1766733015969.png" alt="Selected answer indicator" class="w-6 h-6">
+                            </div>
+                        </button>
+
+                        <button class="w-full p-4 rounded-xl border-2 border-border-surface bg-surface hover:border-primary hover:bg-primary-50 transition-all text-left group">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-full bg-surface-100 group-hover:bg-primary group-hover:text-white flex items-center justify-center font-bold text-text-secondary transition-colors">C</div>
+                                    <span class="font-medium text-text-primary">35%</span>
+                                </div>
+                                <img src="https://images.unsplash.com/photo-1620653680869-51e51ee4d9a6" alt="Select option indicator" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </button>
+
+                        <button class="w-full p-4 rounded-xl border-2 border-border-surface bg-surface hover:border-primary hover:bg-primary-50 transition-all text-left group">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 rounded-full bg-surface-100 group-hover:bg-primary group-hover:text-white flex items-center justify-center font-bold text-text-secondary transition-colors">D</div>
+                                    <span class="font-medium text-text-primary">42%</span>
+                                </div>
+                                <img src="https://images.unsplash.com/photo-1620653680869-51e51ee4d9a6" alt="Select option indicator" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </button>
+                    </div>
+
+                    <!-- Lifelines Section -->
+                    <div class="flex items-center justify-between pt-6 border-t border-border-surface">
+                        <div class="flex items-center space-x-3">
+                            <button class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-secondary-50 hover:bg-secondary-100 transition-colors group">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1e23156cd-1766733016254.png" alt="50-50 lifeline icon" class="w-5 h-5">
+                                <span class="text-sm font-medium text-secondary">50:50</span>
+                            </button>
+                            <button class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-accent-50 hover:bg-accent-100 transition-colors group">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1a3fe1ac3-1767175406692.png" alt="Hint lifeline icon" class="w-5 h-5">
+                                <span class="text-sm font-medium text-accent">Hint</span>
+                            </button>
+                        </div>
+                        <button class="btn btn-primary">
+                            Submit Answer
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1aecd98ef-1766881347366.png" alt="Submit arrow icon" class="w-5 h-5 ml-2 inline">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz Statistics -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="card card-hover bg-gradient-to-br from-success-50 to-surface">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-12 h-12 bg-success rounded-xl flex items-center justify-center">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1bb0b3973-1766733016108.png" alt="Correct answers icon" class="w-7 h-7">
+                            </div>
+                            <span class="text-3xl font-heading font-bold text-success">4</span>
+                        </div>
+                        <p class="text-sm text-text-secondary font-medium">Correct Answers</p>
+                    </div>
+
+                    <div class="card card-hover bg-gradient-to-br from-accent-50 to-surface">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-12 h-12 bg-accent rounded-xl flex items-center justify-center">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_154c223ec-1767175406259.png" alt="Streak multiplier icon" class="w-7 h-7">
+                            </div>
+                            <span class="text-3xl font-heading font-bold text-accent">3x</span>
+                        </div>
+                        <p class="text-sm text-text-secondary font-medium">Streak Multiplier</p>
+                    </div>
+
+                    <div class="card card-hover bg-gradient-to-br from-primary-50 to-surface">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_11106f049-1765437791809.png" alt="Total points icon" class="w-7 h-7">
+                            </div>
+                            <span class="text-3xl font-heading font-bold text-primary">200</span>
+                        </div>
+                        <p class="text-sm text-text-secondary font-medium">Points Earned</p>
+                    </div>
+                </div>
+
+                <!-- Available Quizzes -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-heading font-semibold text-text-primary">Available Quizzes</h2>
+                        <button class="text-sm text-primary hover:text-primary-600 font-medium flex items-center space-x-1">
+                            <span>View All</span>
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_122b59775-1764886535353.png" alt="View all arrow" class="w-4 h-4">
+                        </button>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Quiz Item 1 -->
+                        <div class="flex items-center space-x-4 p-4 bg-surface-50 rounded-xl hover:bg-surface-100 transition-colors cursor-pointer group">
+                            <div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_116bb48d4-1767175406250.png" alt="Ocean conservation quiz thumbnail showing marine life" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center space-x-2 mb-1">
+                                    <h3 class="font-heading font-semibold text-text-primary">Ocean Conservation</h3>
+                                    <span class="badge badge-primary text-xs">New</span>
+                                </div>
+                                <p class="text-sm text-text-secondary mb-2">10 questions • 15 minutes</p>
+                                <div class="flex items-center space-x-3">
+                                    <span class="badge bg-secondary-100 text-secondary-700 text-xs">Biodiversity</span>
+                                    <span class="text-xs text-text-tertiary">+500 pts</span>
+                                </div>
+                            </div>
+                            <button class="btn-primary px-6 py-2 text-sm">Start Quiz</button>
+                        </div>
+
+                        <!-- Quiz Item 2 -->
+                        <div class="flex items-center space-x-4 p-4 bg-surface-50 rounded-xl hover:bg-surface-100 transition-colors cursor-pointer group">
+                            <div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1ead4be50-1767012963338.png" alt="Renewable energy quiz thumbnail with solar panels" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center space-x-2 mb-1">
+                                    <h3 class="font-heading font-semibold text-text-primary">Renewable Energy</h3>
+                                </div>
+                                <p class="text-sm text-text-secondary mb-2">8 questions • 12 minutes</p>
+                                <div class="flex items-center space-x-3">
+                                    <span class="badge bg-primary-100 text-primary-700 text-xs">Climate Change</span>
+                                    <span class="text-xs text-text-tertiary">+400 pts</span>
+                                </div>
+                            </div>
+                            <button class="btn-outline px-6 py-2 text-sm">Start Quiz</button>
+                        </div>
+
+                        <!-- Quiz Item 3 -->
+                        <div class="flex items-center space-x-4 p-4 bg-surface-50 rounded-xl hover:bg-surface-100 transition-colors cursor-pointer group">
+                            <div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_13b7daf83-1767175406225.png" alt="Waste management quiz thumbnail showing recycling" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex items-center space-x-2 mb-1">
+                                    <h3 class="font-heading font-semibold text-text-primary">Waste Management</h3>
+                                </div>
+                                <p class="text-sm text-text-secondary mb-2">12 questions • 18 minutes</p>
+                                <div class="flex items-center space-x-3">
+                                    <span class="badge bg-accent-100 text-accent-700 text-xs">Sustainability</span>
+                                    <span class="text-xs text-text-tertiary">+600 pts</span>
+                                </div>
+                            </div>
+                            <button class="btn-outline px-6 py-2 text-sm">Start Quiz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="space-y-6">
+                <!-- Live Participants Panel -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-heading font-semibold text-text-primary">Live Participants</h2>
+                        <div class="flex items-center space-x-2 px-3 py-1.5 bg-success-100 rounded-lg">
+                            <div class="w-2 h-2 bg-success rounded-full animate-pulse"></div>
+                            <span class="text-sm font-bold text-success-700">247 Active</span>
+                        </div>
+                    </div>
+
+                    <!-- Participant List -->
+                    <div class="space-y-3 mb-6">
+                        <!-- Participant 1 -->
+                        <div class="flex items-center space-x-3 p-3 bg-gradient-to-r from-accent-50 to-transparent rounded-lg">
+                            <div class="relative">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_17498cb9e-1763296066954.png" alt="Sarah Chen profile picture" class="w-10 h-10 rounded-full object-cover border-2 border-accent">
+                                <div class="absolute -top-1 -right-1 w-5 h-5 bg-accent rounded-full flex items-center justify-center text-white text-xs font-bold">1</div>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h4 class="font-medium text-text-primary truncate">Sarah Chen</h4>
+                                <p class="text-xs text-text-secondary">450 pts • 10/10</p>
+                            </div>
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1165e31d6-1764649025704.png" alt="Completed indicator" class="w-5 h-5">
+                        </div>
+
+                        <!-- Participant 2 -->
+                        <div class="flex items-center space-x-3 p-3 bg-gradient-to-r from-primary-50 to-transparent rounded-lg">
+                            <div class="relative">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_184e5f4b2-1763294080263.png" alt="Marcus Johnson profile picture" class="w-10 h-10 rounded-full object-cover border-2 border-primary">
+                                <div class="absolute -top-1 -right-1 w-5 h-5 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold">2</div>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h4 class="font-medium text-text-primary truncate">Marcus Johnson</h4>
+                                <p class="text-xs text-text-secondary">420 pts • 9/10</p>
+                            </div>
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1165e31d6-1764649025704.png" alt="Completed indicator" class="w-5 h-5">
+                        </div>
+
+                        <!-- Participant 3 -->
+                        <div class="flex items-center space-x-3 p-3 bg-gradient-to-r from-secondary-50 to-transparent rounded-lg">
+                            <div class="relative">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1a5df2297-1763292384104.png" alt="Emma Wilson profile picture" class="w-10 h-10 rounded-full object-cover border-2 border-secondary">
+                                <div class="absolute -top-1 -right-1 w-5 h-5 bg-secondary rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h4 class="font-medium text-text-primary truncate">Emma Wilson</h4>
+                                <p class="text-xs text-text-secondary">400 pts • 8/10</p>
+                            </div>
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1165e31d6-1764649025704.png" alt="Completed indicator" class="w-5 h-5">
+                        </div>
+
+                        <!-- Current User -->
+                        <div class="flex items-center space-x-3 p-3 bg-gradient-to-r from-success-50 to-transparent rounded-lg border-2 border-success">
+                            <div class="relative">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1c2c3237e-1766481832967.png" alt="Your profile picture" class="w-10 h-10 rounded-full object-cover border-2 border-success">
+                                <div class="absolute -top-1 -right-1 w-5 h-5 bg-success rounded-full flex items-center justify-center text-white text-xs font-bold">47</div>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h4 class="font-medium text-text-primary truncate">You (Alex Rivera)</h4>
+                                <p class="text-xs text-text-secondary">200 pts • 4/5</p>
+                            </div>
+                            <div class="flex items-center space-x-1">
+                                <div class="w-2 h-2 bg-success rounded-full animate-pulse"></div>
+                                <span class="text-xs font-medium text-success-700">Active</span>
+                            </div>
+                        </div>
+
+                        <!-- Eliminated Participant -->
+                        <div class="flex items-center space-x-3 p-3 bg-surface-50 rounded-lg opacity-60">
+                            <div class="relative">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1311bae8f-1763293463780.png" alt="James Lee profile picture" class="w-10 h-10 rounded-full object-cover grayscale">
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_13cde744c-1766789307563.png" alt="Eliminated indicator" class="w-6 h-6">
+                                </div>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h4 class="font-medium text-text-tertiary truncate line-through">James Lee</h4>
+                                <p class="text-xs text-text-tertiary">Eliminated • 3/5</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="w-full py-2 text-sm text-primary hover:text-primary-600 font-medium flex items-center justify-center space-x-1">
+                        <span>View All Participants</span>
+                        <img src="https://images.unsplash.com/photo-1647887069645-5446a2f07ef9" alt="Expand participants list" class="w-4 h-4">
+                    </button>
+                </div>
+
+                <!-- Quiz Schedule -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-heading font-semibold text-text-primary">Upcoming Live Quizzes</h2>
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_153404168-1765124895393.png" alt="Calendar icon" class="w-6 h-6">
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Scheduled Quiz 1 -->
+                        <div class="p-4 bg-gradient-to-r from-accent-50 to-transparent rounded-xl border-l-4 border-accent">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="font-heading font-semibold text-text-primary mb-1">Ocean Conservation Challenge</h3>
+                                    <p class="text-sm text-text-secondary mb-2">Live elimination quiz with prizes</p>
+                                </div>
+                                <span class="badge badge-warning text-xs">Live Soon</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4 text-xs text-text-secondary">
+                                    <div class="flex items-center space-x-1">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10a301dcf-1767101029048.png" alt="Time icon" class="w-4 h-4">
+                                        <span>Today, 3:00 PM</span>
+                                    </div>
+                                    <div class="flex items-center space-x-1">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1fedb0d1e-1767092317907.png" alt="Participants icon" class="w-4 h-4">
+                                        <span>156 joined</span>
+                                    </div>
+                                </div>
+                                <button class="px-3 py-1.5 bg-accent text-white text-xs font-medium rounded-lg hover:bg-accent-700 transition-colors">Join</button>
+                            </div>
+                        </div>
+
+                        <!-- Scheduled Quiz 2 -->
+                        <div class="p-4 bg-gradient-to-r from-primary-50 to-transparent rounded-xl border-l-4 border-primary">
+                            <div class="flex items-start justify-between mb-2">
+                                <div>
+                                    <h3 class="font-heading font-semibold text-text-primary mb-1">Climate Action Week</h3>
+                                    <p class="text-sm text-text-secondary mb-2">Special event with bonus points</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4 text-xs text-text-secondary">
+                                    <div class="flex items-center space-x-1">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10a301dcf-1767101029048.png" alt="Time icon" class="w-4 h-4">
+                                        <span>Tomorrow, 6:00 PM</span>
+                                    </div>
+                                    <div class="flex items-center space-x-1">
+                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1fedb0d1e-1767092317907.png" alt="Participants icon" class="w-4 h-4">
+                                        <span>89 joined</span>
+                                    </div>
+                                </div>
+                                <button class="px-3 py-1.5 bg-primary text-white text-xs font-medium rounded-lg hover:bg-primary-600 transition-colors">Set Reminder</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Achievements -->
+                <div class="card">
+                    <h2 class="text-xl font-heading font-semibold text-text-primary mb-6">Recent Achievements</h2>
+                    
+                    <div class="space-y-4">
+                        <!-- Achievement 1 -->
+                        <div class="flex items-center space-x-3 p-3 bg-gradient-to-r from-accent-50 to-transparent rounded-lg achievement-pop">
+                            <div class="w-12 h-12 bg-accent rounded-xl flex items-center justify-center flex-shrink-0">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1445e9cd3-1766893297588.png" alt="Trophy achievement icon" class="w-7 h-7">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h4 class="font-medium text-text-primary">Quiz Master</h4>
+                                <p class="text-xs text-text-secondary">Complete 10 quizzes</p>
+                            </div>
+                            <span class="text-xs font-bold text-accent">+100</span>
+                        </div>
+
+                        <!-- Achievement 2 -->
+                        <div class="flex items-center space-x-3 p-3 bg-gradient-to-r from-success-50 to-transparent rounded-lg">
+                            <div class="w-12 h-12 bg-success rounded-xl flex items-center justify-center flex-shrink-0">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1528e9f9e-1767042222266.png" alt="Streak achievement icon" class="w-7 h-7">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h4 class="font-medium text-text-primary">Streak Champion</h4>
+                                <p class="text-xs text-text-secondary">20 day streak</p>
+                            </div>
+                            <span class="text-xs font-bold text-success">+150</span>
+                        </div>
+
+                        <!-- Achievement 3 -->
+                        <div class="flex items-center space-x-3 p-3 bg-gradient-to-r from-primary-50 to-transparent rounded-lg">
+                            <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1429e0885-1767040363513.png" alt="Knowledge achievement icon" class="w-7 h-7">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h4 class="font-medium text-text-primary">Climate Expert</h4>
+                                <p class="text-xs text-text-secondary">Perfect score in category</p>
+                            </div>
+                            <span class="text-xs font-bold text-primary">+200</span>
+                        </div>
+                    </div>
+
+                    <button class="w-full mt-4 py-2 text-sm text-primary hover:text-primary-600 font-medium flex items-center justify-center space-x-1">
+                        <span>View All Achievements</span>
+                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_122b59775-1764886535353.png" alt="View all arrow" class="w-4 h-4">
+                    </button>
+                </div>
+
+                <!-- Learning Resources -->
+                <div class="card">
+                    <h2 class="text-xl font-heading font-semibold text-text-primary mb-6">Learning Resources</h2>
+                    
+                    <div class="space-y-3">
+                        <a href="javascript:void(0)" class="flex items-center space-x-3 p-3 bg-surface-50 rounded-lg hover:bg-surface-100 transition-colors group">
+                            <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_169148020-1766812569544.png" alt="Study guide icon" class="w-6 h-6">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h4 class="text-sm font-medium text-text-primary">Climate Change Guide</h4>
+                                <p class="text-xs text-text-secondary">15 min read</p>
+                            </div>
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1ad7309df-1766826258782.png" alt="Navigate to guide" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </a>
+
+                        <a href="javascript:void(0)" class="flex items-center space-x-3 p-3 bg-surface-50 rounded-lg hover:bg-surface-100 transition-colors group">
+                            <div class="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1ce3537d0-1764655982185.png" alt="Video tutorial icon" class="w-6 h-6">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h4 class="text-sm font-medium text-text-primary">Ocean Ecosystems</h4>
+                                <p class="text-xs text-text-secondary">8 min video</p>
+                            </div>
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_151d14a6a-1767019219127.png" alt="Navigate to video" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </a>
+
+                        <a href="javascript:void(0)" class="flex items-center space-x-3 p-3 bg-surface-50 rounded-lg hover:bg-surface-100 transition-colors group">
+                            <div class="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center">
+                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_138f129b5-1767067270879.png" alt="Article icon" class="w-6 h-6">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h4 class="text-sm font-medium text-text-primary">Renewable Energy</h4>
+                                <p class="text-xs text-text-secondary">12 min read</p>
+                            </div>
+                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_19dda957b-1767080555806.png" alt="Navigate to article" class="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface border-t border-border-surface z-100">
+        <div class="flex items-center justify-around h-16">
+            <a href="user_dashboard.html" class="flex flex-col items-center space-y-1 text-text-secondary">
+                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_12cc8521d-1765415999525.png" alt="Dashboard icon" class="w-6 h-6">
+                <span class="text-xs font-medium">Dashboard</span>
+            </a>
+            <a href="knowledge_quiz.html" class="flex flex-col items-center space-y-1 text-primary">
+                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1a4458d10-1767056475817.png" alt="Quiz icon" class="w-6 h-6">
+                <span class="text-xs font-medium">Quiz</span>
+            </a>
+            <a href="eco_tasks.html" class="flex flex-col items-center space-y-1 text-text-secondary">
+                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1355b164c-1765190595135.png" alt="Tasks icon" class="w-6 h-6">
+                <span class="text-xs font-medium">Tasks</span>
+            </a>
+            <a href="community_issues.html" class="flex flex-col items-center space-y-1 text-text-secondary">
+                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_132483cf3-1765534793443.png" alt="Community icon" class="w-6 h-6">
+                <span class="text-xs font-medium">Community</span>
+            </a>
+            <a href="user_profile.html" class="flex flex-col items-center space-y-1 text-text-secondary">
+                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_193b9be6e-1766708060514.png" alt="Profile icon" class="w-6 h-6">
+                <span class="text-xs font-medium">Profile</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Footer Spacer for Mobile Nav -->
+    <div class="h-16 md:hidden"></div>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
