@@ -128,14 +128,4 @@ Users immediately receive feedback in the form of:
 This closes the loop between action and visibility.
 
 
-## 7. Data Model (Simplified)
 
-Each verified task submission produces a structured record similar to:
-
-```json
-{
-  "taskId": "cleanup_01",
-  "userId": "demo_user",
-  "status": "verified",
-  "timestamp": "2025-12-26T10:30:00"
-}
