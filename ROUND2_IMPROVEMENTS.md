@@ -5,8 +5,6 @@ This document describes the improvements in what was implemented and demonstrate
 The primary objective of the Round 1 prototype was not scale or advanced intelligence, but to validate a complete and working data pipeline:
 citizen action → verification → storage → aggregation → feedback.
 
-Due to limited development time during round 1,several component were intentionally simplified to focus on system coherence.
-
 Now , we are focusing on strengthning credibility ,analytical depth and institution usability, while deliberately preserving the core architecture validated in previous round. 
 
 ##1. Replace Simulated Verification with Real AI Models
