@@ -1,3 +1,5 @@
+Theme- Ai+governance
+
 # EcoQuest  
 **A Civic Data Platform for Verified Environmental Action**
 
@@ -42,13 +44,24 @@ The current prototype demonstrates:
 
 AI verification, moderation, and external integrations are simulated to prioritize clarity of system flow.
 
- Tech Stack
+ #Tech Stack
 
 - Frontend: React.js  
 - Backend: Node.js (Express) / Python (Flask)  
 - Database: MongoDB (Atlas Free Tier) / In-memory storage  
 - Hosting: Free-tier cloud services  
 
+Tools-:
+
+Image Verification: PyTorch, YOLO or other open souce models, OpenCV
+
+Data manipulation: Pandas, NumPy
+
+Moderation (optional): Transformers
+
+Serving: FastAPI
+
+Agentic ai: Langchain, Langgraph, gemini series
 
  Notes for Reviewers
 
