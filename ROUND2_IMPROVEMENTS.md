@@ -1,26 +1,30 @@
 # EcoQuest – Round 2 Improvements Plan
 
-This document outlines the **planned improvements for Round 2**, building directly on the system demonstrated in Round 1.
+This document describes the improvements in what was implemented and demonstrated during the previous round.
 
-The Round 1 prototype focuses on proving a complete, coherent data flow:
+The primary objective of the Round 1 prototype was not scale or advanced intelligence, but to validate a complete and working data pipeline:
 citizen action → verification → storage → aggregation → feedback.
 
-Round 2 enhancements aim to **strengthen data credibility, expand institutional usability, and improve analytical depth**, without changing the core system architecture.
+Due to limited development time during round 1,several component were intentionally simplified to focus on system coherence.
 
+Now , we are focusing on strengthning credibility ,analytical depth and institution usability, while deliberately preserving the core architecture validated in previous round. 
 
-## 1. Replace Simulated Verification with Real AI Models
+##1. Replace Simulated Verification with Real AI Models
 
-### Current (Round 1)
+###Current (Round 1)
 - Image verification is simulated or rule-based
 - Manual approval is represented conceptually
 
 ### Improvement (Round 2)
-- Integrate real computer vision models (e.g., YOLO / MobileNet)
-- Detect environmental objects such as:
-  - Trash and waste
-  - Trees and plants
-  - Water bodies and pollution indicators
-- Use AI as a first-pass filter before manual review
+Round 2 will integrate real computer vision models such as YOLO or MobileNet to perform first-level image analysis. These models will be used to identify environmental elements including:
+
+-Trash and unmanaged waste
+
+-Trees and vegetation
+
+-Water bodies and visible pollution indicators
+
+AI-based verification will act strictly as a pre-screening layer, with final approval still reserved for moderators where required.
 
 ### Value
 - Improves scalability of verification
@@ -29,9 +33,6 @@ Round 2 enhancements aim to **strengthen data credibility, expand institutional 
 
 
 ## 2. Institutional Dashboards (NGO / Authority View)
-
-### Current (Round 1)
-- Aggregation visible mainly through user-facing leaderboards
 
 ### Improvement (Round 2)
 - Dedicated dashboards for NGOs and institutions showing:
@@ -48,20 +49,18 @@ Round 2 enhancements aim to **strengthen data credibility, expand institutional 
 ## 3. Credibility & Trust Scoring for Users
 
 ### Current (Round 1)
-- All verified actions contribute equally
+In the initial version, all verified contributions were treated equally, regardless of the contributor’s history or reliability.
+While simple, this approach risks lowering overall data quality as the system scales.
 
 ### Improvement (Round 2)
-- Introduce a user credibility score based on:
-  - History of verified submissions
-  - Knowledge-based performance
-  - Consistency of participation
-- Weight data contributions by credibility score
+- Now , we will introduce a user credibility score based on :-
+  - Past verification success rate
+  - Performance in knowledge-based challenges
+  - Consistency and time duration of participation
+Data contributions will be weighted using this score, rather than being treated uniformly.
 
 ### Value
-- Further improves data reliability
-- Discourages low-effort or spam participation
-- Enables differentiated access to higher-impact tasks
-
+Credibility-weighted data improves reliability without excluding new users. It also discourages low-effort submissions and enables more responsible users to access higher-impact tasks.
 
 ## 4. Advanced Aggregation & Hotspot Analytics
 
@@ -69,56 +68,55 @@ Round 2 enhancements aim to **strengthen data credibility, expand institutional 
 - Basic aggregation (counts, leaderboards)
 
 ### Improvement (Round 2)
+Integrating deeper analytical capabilities,including :
 - Time-series analysis of actions and reports
 - Automatic detection of:
   - Persistent problem areas
   - High-impact intervention zones
-- Visual hotspot maps with temporal trends
+- Visual hotspot on maps.
 
 ### Value
-- Enables proactive, data-driven interventions
-- Moves system from descriptive to analytical
+These changes shift EcoQuest from a descriptive system to an analytical one, allowing institutions to act proactively rather than reactively.
 
 
 ## 5. Expansion of Public Reporting System
 
 ### Current (Round 1)
-- Basic report submission and status tracking
+Public reporting in Round 1 focused on basic submission and status visibility, primarily to demonstrate feasibility.
 
 ### Improvement (Round 2)
+Now , the reporting system will be expanded to include :
 - Category-specific routing to relevant authorities
-- SLA-based status tracking (time-to-resolution)
-- Report quality feedback loop to reporters
+- SLA-based status tracking (resolution-timelines).
+-Feedback mechanisms that help reporters improve submission quality
 
 ### Value
-- Improves accountability
-- Makes reporting data operationally useful
+These additions improve accountability and make public reports operationally meaningful rather than purely informational.
 
 
 ## 6. Civic Feedback & Sentiment Dashboards
 
 ### Current (Round 1)
-- Opinion and sentiment features are scoped conceptually
+Public opinion and sentiment analysis were scoped conceptually but not implemented in the initial prototype.
 
 ### Improvement (Round 2)
-- AI-based sentiment aggregation
-- Issue-wise public priority scoring
-- Location-based sentiment overlays with action data
+Introduction of :
+- AI-based sentiment aggregation.
+- Issue-based public priority scoring.
+- Location-based sentiment aligned with action data.
 
 ### Value
-- Adds qualitative context to quantitative data
-- Helps institutions understand public perception alongside ground reality
-
-
+Combining qualitative sentiment with quantitative action data provides a more complete picture of environmental issues and public perception.
 
 ## 7. Why These Improvements Matter
 
 All Round 2 improvements:
 - Build directly on the Round 1 architecture
 - Do not require redesigning the core data flow
-- Strengthen verification, analytics, and institutional usability
-
-The focus remains consistent:
+- Focus on trust, analytical depth, and institutional usability
+  
+Making existing functionality reliable enough for real-world adoption.
+Our central goal is still the same:
  **Transform citizen participation into reliable, scalable environmental intelligence.**
 
 
