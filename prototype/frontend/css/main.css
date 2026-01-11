@@ -899,11 +899,11 @@ p {
 .card{
   border-radius: 0.75rem;
   border-width: 1px;
-  border-color: rgb(45 125 50 / 0.1);
+  border-color: rgb(45 125 50 / 0.14);
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-  padding: 2rem;
-  --tw-shadow: 0 2px 4px rgba(45, 125, 50, 0.12);
+  padding: 1.5rem;
+  --shadow-primary: 0 8px 24px rgba(16, 24, 40, 0.08);
   --tw-shadow-colored: 0 2px 4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   box-shadow: 0 2px 4px var(--shadow-primary);
@@ -920,9 +920,24 @@ p {
   --tw-translate-y: -0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   --tw-shadow: 0 6px 12px rgba(45, 125, 50, 0.18);
-  --tw-shadow-colored: 0 6px 12px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  box-shadow: 0 6px 12px var(--shadow-primary-md);
+  box-shadow: var(--tw-shadow);
+}
+
+.search-panel{
+  border-color: rgba(45, 125, 50, 0.18);
+  box-shadow: 0 4px 12px rgba(45, 125, 50, 0.12);
+  padding: 1.25rem;
+}
+
+.load-more-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 200px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 9999px;
 }
 
 /* Button Components */
@@ -998,14 +1013,19 @@ p {
 /* Input Components */
 
 .input{
-  height: 0.75rem;
+  height: auto;
+  min-height: 3rem;
   border-radius: 0.75rem;
   border-width: 1px;
-  border-color: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.14);
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(26 26 26 / var(--tw-text-opacity, 1));
 }
@@ -1039,6 +1059,11 @@ p {
   --tw-ring-color: rgb(45 125 50 / var(--tw-ring-opacity, 1));
   --tw-ring-offset-width: 3px;
   --tw-ring-width: 3px;
+}
+
+.search-icon{
+  opacity: 0.65;
+  pointer-events: none;
 }
 
 .label{

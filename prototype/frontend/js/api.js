@@ -110,6 +110,10 @@ class EcoQuestAPI {
     return this.request(endpoint);
   }
 
+  async getDashboard() {
+    return this.request('/me/dashboard');
+  }
+
   async getCurrentUser() {
     // Auth routes live at /auth (not under /api)
     const config = {

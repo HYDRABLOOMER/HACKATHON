@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const api = window.ecoQuestAPI;
   const tasksList = document.getElementById('tasksList');
+  const taskSearchInput = document.getElementById('taskSearch');
   const modal = document.getElementById('submissionModal');
   const closeModalBtn = document.getElementById('closeModalBtn');
   const cancelEvidenceBtn = document.getElementById('cancelEvidenceBtn');
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let capturedBlob = null;
   let stream = null;
   let currentCategory = '';
+  let allTasks = [];
 
   function formatNumber(n){
     return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -266,11 +268,33 @@ document.addEventListener('DOMContentLoaded', function () {
     tasksList.innerHTML = html;
   }
 
+  function getSearchQuery() {
+    return taskSearchInput ? String(taskSearchInput.value || '').trim().toLowerCase() : '';
+  }
+
+  function applyTaskFilters(tasks) {
+    const list = Array.isArray(tasks) ? tasks : [];
+    const q = getSearchQuery();
+    if (!q) return list;
+
+    return list.filter((t) => {
+      const title = String(t && t.title ? t.title : '').toLowerCase();
+      const description = String(t && t.description ? t.description : '').toLowerCase();
+      const category = String(t && t.category ? t.category : '').toLowerCase();
+      return title.includes(q) || description.includes(q) || category.includes(q);
+    });
+  }
+
+  function renderFilteredTasks() {
+    renderTasks(applyTaskFilters(allTasks));
+  }
+
   async function loadTasks() {
     if (!api) return;
     try {
       const tasks = await api.getTasks({ category: currentCategory || undefined });
-      renderTasks(tasks);
+      allTasks = Array.isArray(tasks) ? tasks : [];
+      renderFilteredTasks();
     } catch (error) {
       console.error(error);
       if (tasksList) tasksList.innerHTML = '<div class="card">Failed to load tasks.</div>';
@@ -285,6 +309,12 @@ document.addEventListener('DOMContentLoaded', function () {
   refreshDashboard();
   loadTasks();
   refreshActiveTasks();
+
+  if (taskSearchInput) {
+    taskSearchInput.addEventListener('input', () => {
+      renderFilteredTasks();
+    });
+  }
 
   if (categoryTabs) {
     categoryTabs.addEventListener('click', async (e) => {

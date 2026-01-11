@@ -12,7 +12,7 @@ const IssueReport = require("../models/IssueReport.js");
 const KnowledgeAttempt = require("../models/KnowledgeAttempt.js");
 const VerificationResult = require("../models/VerificationResult.js");
 const TaskEvent = require("../models/TaskEvent.js");
-const { semanticVerification } = require("../ai/semanticVerification.js");
+const { semanticVerification, fraudDetection } = require("../ai/semanticVerification.js");
 
 const router = express.Router();
 
@@ -697,17 +697,18 @@ router.post(
       const task = await Task.findById(submission.taskId);
       const expectedMinConfidence = task?.verificationHints?.minConfidence;
 
-      // Simulated AI output (replace with real AI service call later)
+      // AI Analysis - separate semantic and fraud detection
       let aiConfidence;
-      const fraudScore = 0.1;
+      let fraudScore = 0.1; // default fallback
       let flags = imageUrls.length > 0 ? ["image_received"] : ["missing_image"];
       let reason = "";
       let explanation = "";
 
       if (imagePaths.length > 0 && process.env.GEMINI_API_KEY) {
         try {
-          const claim = task?.title || task?.description || "Environmental task evidence";
-          const semantic = await semanticVerification(imagePaths[0], claim);
+          // 1. Semantic Verification - compares image to TASK description
+          const taskClaim = task?.title || task?.description || "Environmental task evidence";
+          const semantic = await semanticVerification(imagePaths[0], taskClaim);
           if (typeof semantic?.semantic_score === "number") {
             aiConfidence = semantic.semantic_score;
             flags = ["semantic_verification", ...flags];
@@ -715,12 +716,33 @@ router.post(
             console.log("[verification] gemini semantic_score=", aiConfidence);
           } else {
             flags = ["semantic_verification_invalid", ...flags];
-            reason = "AI verification returned an invalid response";
+            reason = "AI semantic verification returned an invalid response";
           }
         } catch (err) {
           flags = ["semantic_verification_error", ...flags];
           reason = geminiErrorToReason(err);
-          console.error("[verification] gemini error:", err && err.message ? err.message : err);
+          console.error("[verification] gemini semantic error:", err && err.message ? err.message : err);
+          if (err && err.stack) console.error(err.stack);
+        }
+
+        try {
+          // 2. Fraud Detection - analyzes image with USER description
+          const userDescription = submission?.evidence?.description || "";
+          const fraud = await fraudDetection(imagePaths[0], userDescription);
+          if (typeof fraud?.fraud_score === "number") {
+            fraudScore = fraud.fraud_score;
+            flags = ["fraud_detection", ...flags];
+            if (explanation) explanation += " | ";
+            explanation += typeof fraud?.explanation === "string" ? fraud.explanation : "";
+            console.log("[verification] gemini fraud_score=", fraudScore);
+          } else {
+            flags = ["fraud_detection_invalid", ...flags];
+            if (!reason) reason = "AI fraud detection returned an invalid response";
+          }
+        } catch (err) {
+          flags = ["fraud_detection_error", ...flags];
+          if (!reason) reason = geminiErrorToReason(err);
+          console.error("[verification] gemini fraud error:", err && err.message ? err.message : err);
           if (err && err.stack) console.error(err.stack);
         }
       } else if (imagePaths.length > 0 && !process.env.GEMINI_API_KEY) {

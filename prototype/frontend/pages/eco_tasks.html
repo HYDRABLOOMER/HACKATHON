@@ -128,50 +128,13 @@
         </div>
 
         <!-- Filters and Search -->
-        <div class="card mb-8">
-            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+        <div class="card search-panel mb-8">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4">
                 <!-- Search Bar -->
                 <div class="flex-1 max-w-md">
                     <div class="relative">
-                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_194eeb027-1764656322629.png" alt="Search icon" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5">
-                        <input type="text" placeholder="Search tasks..." class="input pl-12 w-full" id="taskSearch">
+                        <input type="search" placeholder="Search by category or description..." class="input pl-4 w-full" id="taskSearch" autocomplete="off" aria-label="Search tasks">
                     </div>
-                </div>
-
-                <!-- Filter Controls -->
-                <div class="flex flex-wrap items-center gap-3">
-                    <!-- Category Filter -->
-                    <div class="relative">
-                        <button class="flex items-center space-x-2 px-4 py-2 bg-surface-50 rounded-lg hover:bg-surface-100 transition-colors border border-border-surface" id="categoryFilter">
-                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_18ff10d2f-1764660632354.png" alt="Filter icon" class="w-5 h-5">
-                            <span class="text-sm font-medium text-text-primary">All Categories</span>
-                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1d99f22fc-1764644375055.png" alt="Chevron down icon" class="w-4 h-4">
-                        </button>
-                    </div>
-
-                    <!-- Difficulty Filter -->
-                    <div class="relative">
-                        <button class="flex items-center space-x-2 px-4 py-2 bg-surface-50 rounded-lg hover:bg-surface-100 transition-colors border border-border-surface" id="difficultyFilter">
-                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14470a21a-1767175398760.png" alt="Signal icon for difficulty" class="w-5 h-5">
-                            <span class="text-sm font-medium text-text-primary">All Levels</span>
-                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1d99f22fc-1764644375055.png" alt="Chevron down icon" class="w-4 h-4">
-                        </button>
-                    </div>
-
-                    <!-- Sort By -->
-                    <div class="relative">
-                        <button class="flex items-center space-x-2 px-4 py-2 bg-surface-50 rounded-lg hover:bg-surface-100 transition-colors border border-border-surface" id="sortFilter">
-                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_11d73560a-1766499825938.png" alt="Sort icon" class="w-5 h-5">
-                            <span class="text-sm font-medium text-text-primary">Sort By</span>
-                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1d99f22fc-1764644375055.png" alt="Chevron down icon" class="w-4 h-4">
-                        </button>
-                    </div>
-
-                    <!-- Reset Filters -->
-                    <button class="flex items-center space-x-2 px-4 py-2 text-primary hover:bg-primary-50 rounded-lg transition-colors" id="resetFilters">
-                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1aeddefea-1767123354722.png" alt="Reset icon" class="w-5 h-5">
-                        <span class="text-sm font-medium">Reset</span>
-                    </button>
                 </div>
             </div>
         </div>
@@ -474,8 +437,7 @@
 
                 <!-- Load More Button -->
                 <div class="flex justify-center mt-8">
-                    <button class="btn btn-outline flex items-center space-x-2">
-                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1f22e5837-1764668818179.png" alt="Refresh icon" class="w-5 h-5">
+                    <button class="btn btn-outline load-more-btn" id="tasks-load-more">
                         <span>Load More Tasks</span>
                     </button>
                 </div>

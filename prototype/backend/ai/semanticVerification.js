@@ -58,7 +58,7 @@ Instructions:
 - Do NOT decide approval or rejection.
 - ONLY assess semantic consistency between the image and the claim.
 - Output must be valid JSON.
-- semantic_score must be a number between 0 and 1.
+- semantic_score must be a number between 0.00 and 1.00, not just 0 or 1.
 
 Output format:
 {
@@ -97,4 +97,69 @@ Output format:
   };
 }
 
-module.exports = { semanticVerification };
+async function fraudDetection(imagePath, userDescription) {
+  if (!process.env.GEMINI_API_KEY) {
+    throw new Error("GEMINI_API_KEY is not set");
+  }
+
+  const { GoogleGenerativeAI } = await import("@google/generative-ai");
+
+  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+
+  const prompt = `
+You are analyzing an image for potential fraud indicators in an environmental task submission.
+
+User submitted description:
+"${String(userDescription || "").trim()}"
+
+Instructions:
+- Do NOT assess semantic consistency or task completion.
+- ONLY look for signs of manipulation, staging, or deception.
+- Output must be valid JSON.
+- fraud_score must be a number between 0.00 and 1.00 (0.00 = definitely authentic, 1.00 = definitely fraudulent).
+
+Look for:
+- Stock photos, watermarks, or internet-sourced images
+- Inconsistent lighting, shadows, or perspective
+- Signs of digital manipulation
+- Staged or unnatural scenarios
+
+Output format:
+{
+  "fraud_score": <float between 0.00 and 1.00>,
+  "explanation": "<brief explanation of fraud indicators or lack thereof>"
+}
+`;
+
+  const imagePart = imageToGenerativePart(imagePath);
+
+  const result = await model.generateContent({
+    contents: [
+      {
+        role: "user",
+        parts: [{ text: prompt }, imagePart]
+      }
+    ],
+    generationConfig: {
+      temperature: 0.1,
+      responseMimeType: "application/json"
+    }
+  });
+
+  const responseText = result?.response?.text ? result.response.text() : "";
+  const parsed = tryParseJson(responseText);
+  if (!parsed) throw new Error("Gemini did not return valid JSON");
+
+  const fraudScore = parsed.fraud_score;
+  if (typeof fraudScore !== "number" || Number.isNaN(fraudScore)) {
+    throw new Error("Gemini response missing fraud_score");
+  }
+
+  return {
+    fraud_score: Math.max(0, Math.min(1, fraudScore)),
+    explanation: typeof parsed.explanation === "string" ? parsed.explanation : ""
+  };
+}
+
+module.exports = { semanticVerification, fraudDetection };
