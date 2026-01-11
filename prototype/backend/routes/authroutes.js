@@ -2,6 +2,8 @@ const express=require("express");
 const bcrypt=require("bcryptjs");
 const jwt=require("jsonwebtoken");
 const User =require("../models/User.js");
+const UserScore = require("../models/UserScore.js");
+const authMiddleware = require("../middleware/auth.js");
 
 const router = express.Router();
 router.post("/signup", async (req, res) => {
@@ -71,6 +73,46 @@ router.post("/login", async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
+});
+
+// Current user
+router.get("/me", authMiddleware, async (req, res) => {
+  if (!req.user) {
+    return res.status(401).json({ message: "Unauthorized" });
+  }
+
+  const score = await UserScore.findOne({ userId: req.user._id });
+
+  res.json({
+    id: req.user._id,
+    name: req.user.name,
+    email: req.user.email,
+    bio: req.user.bio || "",
+    totalPoints: score?.totalPoints ?? 0,
+    tasksCompleted: score?.tasksCompleted ?? 0
+  });
+});
+
+// Update profile (bio only for now)
+router.put("/me", authMiddleware, async (req, res) => {
+  if (!req.user) {
+    return res.status(401).json({ message: "Unauthorized" });
+  }
+
+  const bio = typeof req.body?.bio === "string" ? req.body.bio.trim() : undefined;
+
+  if (bio !== undefined) {
+    req.user.bio = bio.slice(0, 500);
+  }
+
+  await req.user.save();
+
+  res.json({
+    id: req.user._id,
+    name: req.user.name,
+    email: req.user.email,
+    bio: req.user.bio
+  });
 });
 
 module.exports = router;

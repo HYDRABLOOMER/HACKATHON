@@ -41,7 +41,7 @@
                     </button>
                     <a href="user_profile.html" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
                         <img src="https://img.rocket.new/generatedImages/rocket_gen_img_16e7b66b9-1766496824802.png" alt="User profile avatar" class="w-9 h-9 rounded-full object-cover border-2 border-primary">
-                        <span class="hidden sm:block text-sm font-medium text-text-primary">Alex Rivera</span>
+                        <span data-user-name class="hidden sm:block text-sm font-medium text-text-primary">User</span>
                     </a>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                 <div class="flex items-start justify-between mb-4">
                     <div>
                         <p class="text-sm text-text-secondary font-medium mb-1">Completed Tasks</p>
-                        <h3 class="text-3xl font-heading font-bold text-success">24</h3>
+                        <h3 id="completedTasks" class="text-3xl font-heading font-bold text-success">24</h3>
                     </div>
                     <div class="w-12 h-12 bg-success rounded-xl flex items-center justify-center">
                         <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10d875ff2-1766817002058.png" alt="Check circle icon representing completed tasks" class="w-7 h-7">
@@ -80,7 +80,7 @@
                 <div class="flex items-start justify-between mb-4">
                     <div>
                         <p class="text-sm text-text-secondary font-medium mb-1">Pending Review</p>
-                        <h3 class="text-3xl font-heading font-bold text-warning">2</h3>
+                        <h3 id="pendingReview" class="text-3xl font-heading font-bold text-warning">2</h3>
                     </div>
                     <div class="w-12 h-12 bg-warning rounded-xl flex items-center justify-center">
                         <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1cf22a8aa-1766771929919.png" alt="Clock icon representing pending tasks" class="w-7 h-7">
@@ -114,7 +114,7 @@
                 <div class="flex items-start justify-between mb-4">
                     <div>
                         <p class="text-sm text-text-secondary font-medium mb-1">Task Streak</p>
-                        <h3 class="text-3xl font-heading font-bold text-accent">12 Days</h3>
+                        <h3 id="taskStreak" class="text-3xl font-heading font-bold text-accent">0 Days</h3>
                     </div>
                     <div class="w-12 h-12 bg-accent rounded-xl flex items-center justify-center">
                         <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1629195c5-1766515855391.png" alt="Fire icon representing streak" class="w-7 h-7">
@@ -181,12 +181,12 @@
             <!-- Tasks List Section -->
             <div class="lg:col-span-2 space-y-6">
                 <!-- Category Tabs -->
-                <div class="flex flex-wrap gap-2 mb-6">
-                    <button class="px-4 py-2 bg-primary text-white rounded-lg font-medium transition-colors">All Tasks</button>
-                    <button class="px-4 py-2 bg-surface-50 text-text-secondary rounded-lg font-medium hover:bg-surface-100 transition-colors">Recycling</button>
-                    <button class="px-4 py-2 bg-surface-50 text-text-secondary rounded-lg font-medium hover:bg-surface-100 transition-colors">Conservation</button>
-                    <button class="px-4 py-2 bg-surface-50 text-text-secondary rounded-lg font-medium hover:bg-surface-100 transition-colors">Advocacy</button>
-                    <button class="px-4 py-2 bg-surface-50 text-text-secondary rounded-lg font-medium hover:bg-surface-100 transition-colors">Education</button>
+                <div id="categoryTabs" class="flex flex-wrap gap-2 mb-6">
+                    <button data-category="" class="px-4 py-2 bg-primary text-white rounded-lg font-medium transition-colors">All Tasks</button>
+                    <button data-category="recycling" class="px-4 py-2 bg-surface-50 text-text-secondary rounded-lg font-medium hover:bg-surface-100 transition-colors">Recycling</button>
+                    <button data-category="conservation" class="px-4 py-2 bg-surface-50 text-text-secondary rounded-lg font-medium hover:bg-surface-100 transition-colors">Conservation</button>
+                    <button data-category="advocacy" class="px-4 py-2 bg-surface-50 text-text-secondary rounded-lg font-medium hover:bg-surface-100 transition-colors">Advocacy</button>
+                    <button data-category="education" class="px-4 py-2 bg-surface-50 text-text-secondary rounded-lg font-medium hover:bg-surface-100 transition-colors">Education</button>
                 </div>
 
                 <!-- Task Cards -->
@@ -487,10 +487,10 @@
                 <div class="card">
                     <div class="flex items-center justify-between mb-6">
                         <h2 class="text-xl font-heading font-semibold text-text-primary">My Active Tasks</h2>
-                        <span class="badge badge-primary">2</span>
+                        <span id="activeTasksCount" class="badge badge-primary">0</span>
                     </div>
 
-                    <div class="space-y-4">
+                    <div id="activeTasksList" class="space-y-4">
                         <!-- Active Task 1 -->
                         <div class="p-4 bg-warning-50 rounded-xl border-l-4 border-warning">
                             <div class="flex items-start justify-between mb-2">
@@ -528,7 +528,7 @@
                 <div class="card">
                     <h2 class="text-xl font-heading font-semibold text-text-primary mb-6">Category Progress</h2>
                     
-                    <div class="space-y-4">
+                    <div id="categoryProgressList" class="space-y-4">
                         <!-- Recycling Progress -->
                         <div>
                             <div class="flex items-center justify-between mb-2">
@@ -536,10 +536,10 @@
                                     <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14baff179-1767175397786.png" alt="Recycle icon" class="w-5 h-5">
                                     <span class="text-sm font-medium text-text-primary">Recycling</span>
                                 </div>
-                                <span class="text-sm font-medium text-success">8/15</span>
+                                <span id="catProgressText-recycling" class="text-sm font-medium text-success">0/0</span>
                             </div>
                             <div class="w-full bg-surface-200 rounded-full h-2">
-                                <div class="bg-success h-2 rounded-full" style="width: 53%"></div>
+                                <div id="catProgressBar-recycling" class="bg-success h-2 rounded-full" style="width: 0%"></div>
                             </div>
                         </div>
 
@@ -550,10 +550,10 @@
                                     <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10c9e1ed8-1764666328205.png" alt="Leaf icon" class="w-5 h-5">
                                     <span class="text-sm font-medium text-text-primary">Conservation</span>
                                 </div>
-                                <span class="text-sm font-medium text-primary">6/12</span>
+                                <span id="catProgressText-conservation" class="text-sm font-medium text-primary">0/0</span>
                             </div>
                             <div class="w-full bg-surface-200 rounded-full h-2">
-                                <div class="bg-primary h-2 rounded-full" style="width: 50%"></div>
+                                <div id="catProgressBar-conservation" class="bg-primary h-2 rounded-full" style="width: 0%"></div>
                             </div>
                         </div>
 
@@ -564,10 +564,10 @@
                                     <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1877fb62c-1767175396574.png" alt="School icon" class="w-5 h-5">
                                     <span class="text-sm font-medium text-text-primary">Education</span>
                                 </div>
-                                <span class="text-sm font-medium text-secondary">5/10</span>
+                                <span id="catProgressText-education" class="text-sm font-medium text-secondary">0/0</span>
                             </div>
                             <div class="w-full bg-surface-200 rounded-full h-2">
-                                <div class="bg-secondary h-2 rounded-full" style="width: 50%"></div>
+                                <div id="catProgressBar-education" class="bg-secondary h-2 rounded-full" style="width: 0%"></div>
                             </div>
                         </div>
 
@@ -578,10 +578,10 @@
                                     <img src="https://img.rocket.new/generatedImages/rocket_gen_img_11d83d2b7-1767175408490.png" alt="Bullhorn icon" class="w-5 h-5">
                                     <span class="text-sm font-medium text-text-primary">Advocacy</span>
                                 </div>
-                                <span class="text-sm font-medium text-accent">5/20</span>
+                                <span id="catProgressText-advocacy" class="text-sm font-medium text-accent">0/0</span>
                             </div>
                             <div class="w-full bg-surface-200 rounded-full h-2">
-                                <div class="bg-accent h-2 rounded-full" style="width: 25%"></div>
+                                <div id="catProgressBar-advocacy" class="bg-accent h-2 rounded-full" style="width: 0%"></div>
                             </div>
                         </div>
                     </div>
@@ -810,7 +810,8 @@
         </div>
     </div>
 </script>
-<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/user.js"></script>
 <script src="../js/eco_tasks.js"></script>
 </body>
 </html>

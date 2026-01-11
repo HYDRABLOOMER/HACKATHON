@@ -41,7 +41,7 @@
                     </button>
                     <a href="user_profile.html" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
                         <img src="https://img.rocket.new/generatedImages/rocket_gen_img_16e7b66b9-1766496824802.png" alt="User profile avatar" class="w-9 h-9 rounded-full object-cover border-2 border-primary">
-                        <span class="hidden sm:block text-sm font-medium text-text-primary">Alex Rivera</span>
+                        <span id="navUserName" class="hidden sm:block text-sm font-medium text-text-primary">User</span>
                     </a>
                 </div>
             </div>
@@ -129,86 +129,16 @@
                 <!-- Top 3 Podium -->
                 <div class="card">
                     <h2 class="text-2xl font-heading font-semibold text-text-primary mb-6">Top Performers</h2>
-                    
-                    <div class="grid grid-cols-3 gap-4 mb-8">
-                        <!-- 2nd Place -->
-                        <div class="flex flex-col items-center order-1 lg:order-1">
-                            <div class="relative mb-3">
-                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_17765f472-1763298756672.png" alt="Profile picture of Marcus Johnson, second place winner" class="w-20 h-20 rounded-full object-cover border-4 border-primary-300">
-                                <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-primary-300 rounded-full flex items-center justify-center text-white font-bold text-lg border-4 border-surface">2</div>
-                            </div>
-                            <h3 class="font-heading font-semibold text-text-primary text-center mb-1">Marcus Johnson</h3>
-                            <p class="text-sm text-text-secondary mb-2">3,401 pts</p>
-                            <div class="flex items-center space-x-1">
-                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1f6e0834a-1764648931634.png" alt="Trending up indicator" class="w-4 h-4">
-                                <span class="text-xs text-success-700 font-medium">+2</span>
-                            </div>
-                        </div>
-
-                        <!-- 1st Place -->
-                        <div class="flex flex-col items-center order-2 lg:order-2 -mt-4">
-                            <div class="relative mb-3">
-                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1cf870e50-1763294025759.png" alt="Profile picture of Sarah Chen, first place winner" class="w-24 h-24 rounded-full object-cover border-4 border-accent">
-                                <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold text-xl border-4 border-surface">
-                                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10ef65b99-1766049069024.png" alt="Crown icon for first place" class="w-6 h-6">
-                                </div>
-                            </div>
-                            <h3 class="font-heading font-semibold text-text-primary text-center mb-1">Sarah Chen</h3>
-                            <p class="text-sm text-text-secondary mb-2">3,542 pts</p>
-                            <div class="flex items-center space-x-1">
-                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1f6e0834a-1764648931634.png" alt="Trending up indicator" class="w-4 h-4">
-                                <span class="text-xs text-accent-700 font-medium">+5</span>
-                            </div>
-                        </div>
-
-                        <!-- 3rd Place -->
-                        <div class="flex flex-col items-center order-3 lg:order-3">
-                            <div class="relative mb-3">
-                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_103b528db-1763293982935.png" alt="Profile picture of Emma Wilson, third place winner" class="w-20 h-20 rounded-full object-cover border-4 border-secondary-300">
-                                <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-secondary-300 rounded-full flex items-center justify-center text-white font-bold text-lg border-4 border-surface">3</div>
-                            </div>
-                            <h3 class="font-heading font-semibold text-text-primary text-center mb-1">Emma Wilson</h3>
-                            <p class="text-sm text-text-secondary mb-2">3,298 pts</p>
-                            <div class="flex items-center space-x-1">
-                                <img src="https://images.unsplash.com/photo-1629902689707-b578af415187" alt="No change indicator" class="w-4 h-4">
-                                <span class="text-xs text-text-tertiary font-medium">0</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Achievement Badges for Top 3 -->
-                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-border-surface">
-                        <div class="flex flex-col items-center">
-                            <div class="flex space-x-1 mb-2">
-                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1ed4580db-1767175397799.png" alt="Medal achievement badge" class="w-5 h-5">
-                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1bf24c026-1767175397704.png" alt="Fire streak badge" class="w-5 h-5">
-                            </div>
-                            <span class="text-xs text-text-secondary">45-day streak</span>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <div class="flex space-x-1 mb-2">
-                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1ed4580db-1767175397799.png" alt="Medal achievement badge" class="w-5 h-5">
-                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_11bd3b442-1767175398309.png" alt="Trophy achievement badge" class="w-5 h-5">
-                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1452a689f-1767175398380.png" alt="Star achievement badge" class="w-5 h-5">
-                            </div>
-                            <span class="text-xs text-text-secondary">52-day streak</span>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <div class="flex space-x-1 mb-2">
-                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1ed4580db-1767175397799.png" alt="Medal achievement badge" class="w-5 h-5">
-                            </div>
-                            <span class="text-xs text-text-secondary">38-day streak</span>
-                        </div>
-                    </div>
+                    <div id="leaderboard-podium" class="grid grid-cols-1 sm:grid-cols-3 gap-4"></div>
                 </div>
 
                 <!-- Rankings List -->
                 <div class="card">
                     <div class="flex items-center justify-between mb-6">
                         <h2 class="text-2xl font-heading font-semibold text-text-primary">Complete Rankings</h2>
-                        <div class="flex items-center space-x-2 text-sm text-text-secondary">
+                        <div class="flex items-center space-x-2 text-sm text-text-secondary" id="leaderboard-updated">
                             <img src="https://img.rocket.new/generatedImages/rocket_gen_img_175bcfdbd-1764676194744.png" alt="Clock icon" class="w-4 h-4">
-                            <span>Updated 2 min ago</span>
+                            <span id="leaderboard-updated-text">Updating…</span>
                         </div>
                     </div>
 
@@ -225,241 +155,21 @@
                                     <th class="text-right">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <!-- Rank 4 -->
-                                <tr>
-                                    <td class="font-bold text-text-primary">4</td>
-                                    <td>
-                                        <div class="flex items-center space-x-3">
-                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1d08af847-1763295353729.png" alt="Profile picture of David Kim" class="w-10 h-10 rounded-full object-cover">
-                                            <div>
-                                                <h4 class="font-medium text-text-primary">David Kim</h4>
-                                                <p class="text-xs text-text-secondary">@davidk_eco</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right font-semibold text-text-primary">3,156</td>
-                                    <td class="text-center">
-                                        <div class="flex items-center justify-center space-x-1">
-                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1629195c5-1766515855391.png" alt="Fire streak icon" class="w-4 h-4">
-                                            <span class="text-sm font-medium text-accent">32</span>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="flex items-center justify-center space-x-1">
-                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1f6e0834a-1764648931634.png" alt="Trending up indicator" class="w-4 h-4">
-                                            <span class="text-sm font-medium text-success-700">+3</span>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">
-                                        <button class="px-3 py-1.5 text-sm font-medium text-primary hover:bg-primary-50 rounded-lg transition-colors">
-                                            Follow
-                                        </button>
-                                    </td>
-                                </tr>
-
-                                <!-- Rank 5 -->
-                                <tr>
-                                    <td class="font-bold text-text-primary">5</td>
-                                    <td>
-                                        <div class="flex items-center space-x-3">
-                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_16ffe2d9e-1763296688681.png" alt="Profile picture of Lisa Anderson" class="w-10 h-10 rounded-full object-cover">
-                                            <div>
-                                                <h4 class="font-medium text-text-primary">Lisa Anderson</h4>
-                                                <p class="text-xs text-text-secondary">@lisa_green</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right font-semibold text-text-primary">3,089</td>
-                                    <td class="text-center">
-                                        <div class="flex items-center justify-center space-x-1">
-                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1629195c5-1766515855391.png" alt="Fire streak icon" class="w-4 h-4">
-                                            <span class="text-sm font-medium text-accent">28</span>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="flex items-center justify-center space-x-1">
-                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_182dad357-1764686839586.png" alt="Trending down indicator" class="w-4 h-4">
-                                            <span class="text-sm font-medium text-error-700">-1</span>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">
-                                        <button class="px-3 py-1.5 text-sm font-medium text-primary hover:bg-primary-50 rounded-lg transition-colors">
-                                            Follow
-                                        </button>
-                                    </td>
-                                </tr>
-
-                                <!-- More ranks... -->
-                                <tr>
-                                    <td class="font-bold text-text-primary">6</td>
-                                    <td>
-                                        <div class="flex items-center space-x-3">
-                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1350ab5dd-1763295345389.png" alt="Profile picture of James Rodriguez" class="w-10 h-10 rounded-full object-cover">
-                                            <div>
-                                                <h4 class="font-medium text-text-primary">James Rodriguez</h4>
-                                                <p class="text-xs text-text-secondary">@jameseco</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right font-semibold text-text-primary">2,987</td>
-                                    <td class="text-center">
-                                        <div class="flex items-center justify-center space-x-1">
-                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1629195c5-1766515855391.png" alt="Fire streak icon" class="w-4 h-4">
-                                            <span class="text-sm font-medium text-accent">41</span>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="flex items-center justify-center space-x-1">
-                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1f6e0834a-1764648931634.png" alt="Trending up indicator" class="w-4 h-4">
-                                            <span class="text-sm font-medium text-success-700">+1</span>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">
-                                        <button class="px-3 py-1.5 text-sm font-medium text-text-secondary bg-surface-50 rounded-lg">
-                                            Following
-                                        </button>
-                                    </td>
-                                </tr>
-
-                                <!-- Current User Highlight -->
-                                <tr class="bg-success-50 border-2 border-success">
-                                    <td class="font-bold text-success-700">47</td>
-                                    <td>
-                                        <div class="flex items-center space-x-3">
-                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1c2c3237e-1766481832967.png" alt="Your profile picture" class="w-10 h-10 rounded-full object-cover border-2 border-success">
-                                            <div>
-                                                <h4 class="font-medium text-text-primary">You (Alex Rivera)</h4>
-                                                <p class="text-xs text-text-secondary">@alex_eco</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right font-semibold text-text-primary">2,847</td>
-                                    <td class="text-center">
-                                        <div class="flex items-center justify-center space-x-1">
-                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1629195c5-1766515855391.png" alt="Fire streak icon" class="w-4 h-4">
-                                            <span class="text-sm font-medium text-accent">23</span>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="flex items-center justify-center space-x-1">
-                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1f6e0834a-1764648931634.png" alt="Trending up indicator" class="w-4 h-4">
-                                            <span class="text-sm font-medium text-success-700">+12</span>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">
-                                        <span class="badge badge-success">Your Rank</span>
-                                    </td>
-                                </tr>
-
-                                <!-- More users below -->
-                                <tr>
-                                    <td class="font-bold text-text-primary">48</td>
-                                    <td>
-                                        <div class="flex items-center space-x-3">
-                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10458bf2c-1763293523905.png" alt="Profile picture of Nina Patel" class="w-10 h-10 rounded-full object-cover">
-                                            <div>
-                                                <h4 class="font-medium text-text-primary">Nina Patel</h4>
-                                                <p class="text-xs text-text-secondary">@nina_earth</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-right font-semibold text-text-primary">2,834</td>
-                                    <td class="text-center">
-                                        <div class="flex items-center justify-center space-x-1">
-                                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1629195c5-1766515855391.png" alt="Fire streak icon" class="w-4 h-4">
-                                            <span class="text-sm font-medium text-accent">19</span>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="flex items-center justify-center space-x-1">
-                                            <img src="https://images.unsplash.com/photo-1629902689707-b578af415187" alt="No change indicator" class="w-4 h-4">
-                                            <span class="text-sm font-medium text-text-tertiary">0</span>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">
-                                        <button class="px-3 py-1.5 text-sm font-medium text-primary hover:bg-primary-50 rounded-lg transition-colors">
-                                            Follow
-                                        </button>
-                                    </td>
-                                </tr>
+                            <tbody id="leaderboard-table-body">
+                                <tr><td colspan="6" class="text-center text-text-secondary py-6">Loading leaderboard…</td></tr>
                             </tbody>
                         </table>
                     </div>
 
                     <!-- Mobile Card View -->
-                    <div class="md:hidden space-y-3">
-                        <!-- Rank 4 Card -->
-                        <div class="p-4 bg-surface-50 rounded-xl">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold">4</div>
-                                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1d08af847-1763295353729.png" alt="Profile picture of David Kim" class="w-12 h-12 rounded-full object-cover">
-                                    <div>
-                                        <h4 class="font-medium text-text-primary">David Kim</h4>
-                                        <p class="text-xs text-text-secondary">@davidk_eco</p>
-                                    </div>
-                                </div>
-                                <button class="px-3 py-1.5 text-sm font-medium text-primary bg-primary-50 rounded-lg">
-                                    Follow
-                                </button>
-                            </div>
-                            <div class="flex items-center justify-between text-sm">
-                                <div class="flex items-center space-x-4">
-                                    <div>
-                                        <span class="text-text-secondary">Points:</span>
-                                        <span class="font-semibold text-text-primary ml-1">3,156</span>
-                                    </div>
-                                    <div class="flex items-center space-x-1">
-                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1629195c5-1766515855391.png" alt="Fire streak icon" class="w-4 h-4">
-                                        <span class="font-medium text-accent">32</span>
-                                    </div>
-                                </div>
-                                <div class="flex items-center space-x-1">
-                                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1f6e0834a-1764648931634.png" alt="Trending up indicator" class="w-4 h-4">
-                                    <span class="font-medium text-success-700">+3</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="md:hidden space-y-3" id="leaderboard-mobile"></div>
+                </div>
 
-                        <!-- Current User Card -->
-                        <div class="p-4 bg-success-50 rounded-xl border-2 border-success">
-                            <div class="flex items-center justify-between mb-3">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-10 h-10 bg-success rounded-full flex items-center justify-center text-white font-bold">47</div>
-                                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1c2c3237e-1766481832967.png" alt="Your profile picture" class="w-12 h-12 rounded-full object-cover border-2 border-success">
-                                    <div>
-                                        <h4 class="font-medium text-text-primary">You (Alex Rivera)</h4>
-                                        <p class="text-xs text-text-secondary">@alex_eco</p>
-                                    </div>
-                                </div>
-                                <span class="badge badge-success">Your Rank</span>
-                            </div>
-                            <div class="flex items-center justify-between text-sm">
-                                <div class="flex items-center space-x-4">
-                                    <div>
-                                        <span class="text-text-secondary">Points:</span>
-                                        <span class="font-semibold text-text-primary ml-1">2,847</span>
-                                    </div>
-                                    <div class="flex items-center space-x-1">
-                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1629195c5-1766515855391.png" alt="Fire streak icon" class="w-4 h-4">
-                                        <span class="font-medium text-accent">23</span>
-                                    </div>
-                                </div>
-                                <div class="flex items-center space-x-1">
-                                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1f6e0834a-1764648931634.png" alt="Trending up indicator" class="w-4 h-4">
-                                    <span class="font-medium text-success-700">+12</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Load More Button -->
-                    <div class="mt-6 text-center">
-                        <button class="btn btn-outline">
-                            <span>Load More Rankings</span>
-                        </button>
-                    </div>
+                <!-- Load More Button -->
+                <div class="mt-6 text-center">
+                    <button class="btn btn-outline" id="leaderboard-load-more">
+                        <span>Load More Rankings</span>
+                    </button>
                 </div>
             </div>
 
@@ -737,6 +447,8 @@
 
     <!-- Footer Spacer for Mobile Nav -->
     <div class="h-16 md:hidden"></div>
-<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/user.js"></script>
+    <script src="../js/leaderboards.js"></script>
 </body>
 </html>

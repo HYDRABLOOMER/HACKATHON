@@ -41,7 +41,7 @@
                     </button>
                     <a href="user_profile.html" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
                         <img src="https://img.rocket.new/generatedImages/rocket_gen_img_16e7b66b9-1766496824802.png" alt="User profile avatar" class="w-9 h-9 rounded-full object-cover border-2 border-primary">
-                        <span class="hidden sm:block text-sm font-medium text-text-primary">Alex Rivera</span>
+                        <span id="navUserName" class="hidden sm:block text-sm font-medium text-text-primary">User</span>
                     </a>
                 </div>
             </div>
@@ -52,7 +52,7 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <!-- Welcome Section -->
         <div class="mb-8">
-            <h1 class="text-4xl font-heading font-bold text-text-primary mb-2">Welcome back, Alex! 🌱</h1>
+            <h1 id="welcomeUserName" class="text-4xl font-heading font-bold text-text-primary mb-2">Welcome back! 🌱</h1>
             <p class="text-text-secondary">Track your environmental impact and continue your sustainability journey</p>
         </div>
 
@@ -501,6 +501,7 @@
 
     <!-- Footer Spacer for Mobile Nav -->
     <div class="h-16 md:hidden"></div>
-<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/user.js"></script>
 </body>
 </html>
