@@ -127,7 +127,7 @@
             <!-- Leaderboard List -->
             <div class="lg:col-span-2 space-y-6">
                 <!-- Top 3 Podium -->
-                <div class="card">
+                <div class="card" id="podium">
                     <h2 class="text-2xl font-heading font-semibold text-text-primary mb-6">Top Performers</h2>
                     
                     <div class="grid grid-cols-3 gap-4 mb-8">
@@ -202,7 +202,7 @@
                     </div>
                 </div>
 
-                <!-- Rankings List -->
+                    <!-- Rankings List -->
                 <div class="card">
                     <div class="flex items-center justify-between mb-6">
                         <h2 class="text-2xl font-heading font-semibold text-text-primary">Complete Rankings</h2>
@@ -225,7 +225,7 @@
                                     <th class="text-right">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="leaderboardBody">
                                 <!-- Rank 4 -->
                                 <tr>
                                     <td class="font-bold text-text-primary">4</td>
@@ -738,5 +738,6 @@
     <!-- Footer Spacer for Mobile Nav -->
     <div class="h-16 md:hidden"></div>
 <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+<script src="../js/leaderboards.js"></script>
 </body>
 </html>

@@ -21,6 +21,11 @@ const userSchema = new mongoose.Schema(
     default: 0
   },
 
+  isAdmin: {
+    type: Boolean,
+    default: false
+  },
+
   streak: {
     type: Number,
     default: 0

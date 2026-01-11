@@ -26,11 +26,11 @@
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-1">
-                    <a href="user_dashboard.html" class="px-4 py-2 rounded-lg text-text-secondary hover:bg-surface-50 transition-colors">Dashboard</a>
-                    <a href="knowledge_quiz.html" class="px-4 py-2 rounded-lg text-text-secondary hover:bg-surface-50 transition-colors">Quiz</a>
-                    <a href="eco_tasks.html" class="px-4 py-2 rounded-lg text-text-secondary hover:bg-surface-50 transition-colors">Tasks</a>
-                    <a href="community_issues.html" class="px-4 py-2 rounded-lg bg-primary-50 text-primary font-medium">Community</a>
-                    <a href="leaderboards.html" class="px-4 py-2 rounded-lg text-text-secondary hover:bg-surface-50 transition-colors">Leaderboards</a>
+                    <a href="user_dashboard" class="px-4 py-2 rounded-lg text-text-secondary hover:bg-surface-50 transition-colors">Dashboard</a>
+                    <a href="knowledge_quiz" class="px-4 py-2 rounded-lg text-text-secondary hover:bg-surface-50 transition-colors">Quiz</a>
+                    <a href="eco_tasks" class="px-4 py-2 rounded-lg text-text-secondary hover:bg-surface-50 transition-colors">Tasks</a>
+                    <a href="community_issues" class="px-4 py-2 rounded-lg bg-primary-50 text-primary font-medium">Community</a>
+                    <a href="leaderboards" class="px-4 py-2 rounded-lg text-text-secondary hover:bg-surface-50 transition-colors">Leaderboards</a>
                 </div>
 
                 <!-- User Profile -->
@@ -39,7 +39,7 @@
                         <img src="https://img.rocket.new/generatedImages/rocket_gen_img_16a438811-1766990283880.png" alt="Notifications icon" class="w-6 h-6">
                         <span class="absolute top-1 right-1 w-2 h-2 bg-accent rounded-full"></span>
                     </button>
-                    <a href="user_profile.html" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+                    <a href="user_profile" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
                         <img src="https://img.rocket.new/generatedImages/rocket_gen_img_16e7b66b9-1766496824802.png" alt="User profile avatar" class="w-9 h-9 rounded-full object-cover border-2 border-primary">
                         <span class="hidden sm:block text-sm font-medium text-text-primary">Alex Rivera</span>
                     </a>
@@ -153,19 +153,7 @@
                         <div class="flex items-center space-x-3">
                             <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1a5df2297-1763292384104.png" alt="Profile picture of Emma Wilson" class="w-12 h-12 rounded-full object-cover border-2 border-success">
                             <div>
-                                <div class="flex items-center space-x-2">
-                                    <h3 class="font-heading font-semibold text-text-primary">Emma Wilson</h3>
-                                    <span class="badge badge-success text-xs flex items-center space-x-1">
-                                        <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1f5e1da58-1767074237760.png" alt="Verified badge" class="w-3 h-3">
-                                        <span>Verified NGO</span>
-                                    </span>
-                                </div>
-                                <div class="flex items-center space-x-2 text-sm text-text-secondary">
-                                    <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1263f966d-1766595347304.png" alt="Location marker" class="w-4 h-4">
-                                    <span>Downtown District, 2.3 km away</span>
-                                    <span>•</span>
-                                    <span>2 hours ago</span>
-                                </div>
+    
                             </div>
                         </div>
                         <button class="p-2 hover:bg-surface-50 rounded-lg transition-colors">
@@ -173,19 +161,7 @@
                         </button>
                     </div>
 
-                    <div class="mb-4">
-                        <div class="flex items-center space-x-2 mb-3">
-                            <span class="badge badge-error">Pollution</span>
-                            <span class="badge badge-warning">High Priority</span>
-                        </div>
-                        <h4 class="text-xl font-heading font-semibold text-text-primary mb-2">Illegal Waste Dumping at Riverside Park</h4>
-                        <p class="text-text-secondary mb-4">Large quantities of construction debris and household waste have been illegally dumped near the riverside walking trail. This poses serious environmental risks to the local ecosystem and water quality. Immediate action required from municipal authorities.</p>
-                        
-                        <!-- Issue Image -->
-                        <div class="relative rounded-xl overflow-hidden mb-4 h-80">
-                            <img src="https://img.rocket.new/generatedImages/rocket_gen_img_124c584d4-1765371978566.png" alt="Illegal waste dumping site showing construction debris and household waste near riverside" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;">
-                        </div>
-                    </div>
+                    
 
                     <!-- Engagement Metrics -->
                     <div class="flex items-center justify-between pt-4 border-t border-border-surface">
@@ -451,7 +427,9 @@
                                     <img src="https://img.rocket.new/generatedImages/rocket_gen_img_10d875ff2-1766817002058.png" alt="Resolved icon" class="w-6 h-6">
                                 </div>
                                 <div>
-                                    <div class="text-2xl font-heading font-bold text-success">127</div>
+                                        <div class="text-2xl font-heading font-bold text-success" id="resolvedCount">0</div>
+
+                            <!-- Dynamic content will replace/appear above static cards -->
                                     <div class="text-xs text-text-secondary">Issues Resolved</div>
                                 </div>
                             </div>
@@ -463,7 +441,7 @@
                                     <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1722799de-1766590493384.png" alt="Pending icon" class="w-6 h-6">
                                 </div>
                                 <div>
-                                    <div class="text-2xl font-heading font-bold text-warning">43</div>
+                                    <div class="text-2xl font-heading font-bold text-warning" id="inProgressCount">0</div>
                                     <div class="text-xs text-text-secondary">In Progress</div>
                                 </div>
                             </div>
@@ -475,7 +453,7 @@
                                     <img src="https://img.rocket.new/generatedImages/rocket_gen_img_14256b291-1764684278019.png" alt="Active users icon" class="w-6 h-6">
                                 </div>
                                 <div>
-                                    <div class="text-2xl font-heading font-bold text-primary">2,847</div>
+                                    <div class="text-2xl font-heading font-bold text-primary" id="activeMembersCount">0</div>
                                     <div class="text-xs text-text-secondary">Active Members</div>
                                 </div>
                             </div>
@@ -490,38 +468,10 @@
                         <a href="leaderboards.html" class="text-sm text-primary hover:text-primary-600 font-medium">View All</a>
                     </div>
 
-                    <div class="space-y-4">
-                        <!-- Contributor 1 -->
-                        <div class="flex items-center space-x-3">
-                            <div class="relative">
-                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1a5df2297-1763292384104.png" alt="Profile picture of Emma Wilson" class="w-12 h-12 rounded-full object-cover border-2 border-accent">
-                                <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-accent rounded-full flex items-center justify-center text-white text-xs font-bold border-2 border-surface">1</div>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <h4 class="font-medium text-text-primary truncate">Emma Wilson</h4>
-                                <p class="text-xs text-text-secondary">34 issues reported</p>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-sm font-semibold text-primary">1,245</div>
-                                <div class="text-xs text-text-tertiary">points</div>
-                            </div>
-                        </div>
-
-                        <!-- Contributor 2 -->
-                        <div class="flex items-center space-x-3">
-                            <div class="relative">
-                                <img src="https://img.rocket.new/generatedImages/rocket_gen_img_184e5f4b2-1763294080263.png" alt="Profile picture of Marcus Johnson" class="w-12 h-12 rounded-full object-cover border-2 border-primary">
-                                <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold border-2 border-surface">2</div>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <h4 class="font-medium text-text-primary truncate">Marcus Johnson</h4>
-                                <p class="text-xs text-text-secondary">28 issues reported</p>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-sm font-semibold text-primary">1,089</div>
-                                <div class="text-xs text-text-tertiary">points</div>
-                            </div>
-                        </div>
+                    <div class="space-y-4" id="topContributors">
+                        <!-- populated dynamically -->
+                        <div class="text-sm text-text-secondary">Loading contributors...</div>
+                    </div>
 
                         <!-- Contributor 3 -->
                         <div class="flex items-center space-x-3">
@@ -673,11 +623,11 @@
                 </div>
 
                 <!-- Report Form -->
-                <form class="space-y-6">
+                <form id="reportForm" class="space-y-6">
                     <!-- Issue Title -->
                     <div>
                         <label class="label">Issue Title *</label>
-                        <input type="text" class="input w-full" placeholder="Brief description of the issue" required>
+                        <input id="reportTitle" name="title" type="text" class="input w-full" placeholder="Brief description of the issue" required>
                     </div>
 
                     <!-- Issue Category -->
@@ -703,10 +653,32 @@
                         </div>
                     </div>
 
+                        <!-- Issue Detail Modal -->
+                        <div id="detailModal" class="modal-overlay hidden">
+                            <div class="modal-content max-w-3xl">
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h3 id="detailTitle" class="text-xl font-semibold">Issue</h3>
+                                        <button onclick="document.getElementById('detailModal').classList.add('hidden')" class="p-2">Close</button>
+                                    </div>
+                                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                                        <div>
+                                            <div id="detailImages" class="space-y-2"></div>
+                                            <p id="detailDesc" class="text-text-secondary mt-2"></p>
+                                        </div>
+                                        <div>
+                                            <div id="map" style="height:300px;border-radius:8px;overflow:hidden"></div>
+                                            <div id="detailMeta" class="text-sm text-text-secondary mt-2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     <!-- Priority Level -->
                     <div>
                         <label class="label">Priority Level *</label>
-                        <select class="input w-full" required>
+                        <select id="reportPriority" name="priority" class="input w-full" required>
                             <option value="">Select priority level</option>
                             <option value="low">Low - Can be addressed over time</option>
                             <option value="medium">Medium - Needs attention soon</option>
@@ -717,14 +689,14 @@
                     <!-- Description -->
                     <div>
                         <label class="label">Detailed Description *</label>
-                        <textarea class="input w-full min-h-32 resize-y" placeholder="Provide detailed information about the issue, including when you noticed it and any relevant context..." required></textarea>
+                        <textarea id="reportDescription" name="description" class="input w-full min-h-32 resize-y" placeholder="Provide detailed information about the issue, including when you noticed it and any relevant context..." required></textarea>
                     </div>
 
                     <!-- Location -->
                     <div>
                         <label class="label">Location *</label>
                         <div class="flex gap-3">
-                            <input type="text" class="input flex-1" placeholder="Enter address or location" required>
+                            <input id="reportLocation" name="location" type="text" class="input flex-1" placeholder="Enter address or location" required>
                             <button type="button" class="btn btn-outline h-12 px-6 flex items-center space-x-2">
                                 <img src="https://img.rocket.new/generatedImages/rocket_gen_img_12c87929d-1767001754561.png" alt="Use location icon" class="w-5 h-5">
                                 <span>Use My Location</span>
@@ -740,7 +712,7 @@
                             <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1bcf67d9b-1766986260490.png" alt="Upload icon" class="w-12 h-12 mx-auto mb-3">
                             <p class="text-text-primary font-medium mb-1">Click to upload or drag and drop</p>
                             <p class="text-sm text-text-secondary">PNG, JPG or JPEG (max. 5MB each, up to 5 photos)</p>
-                            <input type="file" class="hidden" accept="image/*" multiple>
+                            <input id="reportImages" type="file" class="hidden" accept="image/*" multiple>
                         </div>
                     </div>
 
@@ -768,23 +740,23 @@
     <!-- Mobile Bottom Navigation -->
     <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface border-t border-border-surface z-100">
         <div class="flex items-center justify-around h-16">
-            <a href="user_dashboard.html" class="flex flex-col items-center space-y-1 text-text-secondary">
+            <a href="user_dashboard" class="flex flex-col items-center space-y-1 text-text-secondary">
                 <img src="https://img.rocket.new/generatedImages/rocket_gen_img_12cc8521d-1765415999525.png" alt="Dashboard icon" class="w-6 h-6">
                 <span class="text-xs font-medium">Dashboard</span>
             </a>
-            <a href="knowledge_quiz.html" class="flex flex-col items-center space-y-1 text-text-secondary">
+            <a href="knowledge_quiz" class="flex flex-col items-center space-y-1 text-text-secondary">
                 <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1a4458d10-1767056475817.png" alt="Quiz icon" class="w-6 h-6">
                 <span class="text-xs font-medium">Quiz</span>
             </a>
-            <a href="eco_tasks.html" class="flex flex-col items-center space-y-1 text-text-secondary">
+            <a href="eco_tasks" class="flex flex-col items-center space-y-1 text-text-secondary">
                 <img src="https://img.rocket.new/generatedImages/rocket_gen_img_1355b164c-1765190595135.png" alt="Tasks icon" class="w-6 h-6">
                 <span class="text-xs font-medium">Tasks</span>
             </a>
-            <a href="community_issues.html" class="flex flex-col items-center space-y-1 text-primary">
+            <a href="community_issues" class="flex flex-col items-center space-y-1 text-primary">
                 <img src="https://img.rocket.new/generatedImages/rocket_gen_img_132483cf3-1765534793443.png" alt="Community icon" class="w-6 h-6">
                 <span class="text-xs font-medium">Community</span>
             </a>
-            <a href="user_profile.html" class="flex flex-col items-center space-y-1 text-text-secondary">
+            <a href="user_profile" class="flex flex-col items-center space-y-1 text-text-secondary">
                 <img src="https://img.rocket.new/generatedImages/rocket_gen_img_193b9be6e-1766708060514.png" alt="Profile icon" class="w-6 h-6">
                 <span class="text-xs font-medium">Profile</span>
             </a>
@@ -802,6 +774,9 @@
             </div>
         </div>
     </footer>
-<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+    <script type="module" src="../js/community_issues.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-sA+4oZ3baw3k5g1QkQYkiS0t3bqk6pY7Y+Ff9t2z9+I=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-o9N1j7gqQYBvF8xkz4rV3G1G1dQXk1e1Yk9b+3z0z9M=" crossorigin=""></script>
+    <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
 </body>
 </html>

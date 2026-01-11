@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="bg-background">
+  <header class="bg-surface border-b p-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <h1 class="text-xl font-heading">Admin Dashboard</h1>
+      <div>
+        <a href="/leaderboards" class="mr-4">Leaderboards</a>
+        <a href="/community_issues">Community</a>
+      </div>
+    </div>
+  </header>
+  <main class="max-w-7xl mx-auto p-6">
+    <section class="mb-6">
+      <h2 class="text-lg font-semibold">Leaderboards (Top 50)</h2>
+      <div class="overflow-x-auto mt-3">
+        <table class="table" id="adminLeaderboard">
+          <thead><tr><th>Rank</th><th>User</th><th class="text-right">Points</th><th>Streak</th><th>Actions</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-lg font-semibold">Community Issues</h2>
+      <div id="issuesContainer" class="mt-3 space-y-3"></div>
+    </section>
+  </main>
+  <!-- Issue Detail Modal -->
+  <div id="adminIssueModal" class="hidden fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
+    <div class="bg-surface rounded-lg max-w-2xl w-full p-6 relative">
+      <button class="modal-close absolute top-3 right-3 btn btn-sm">Close</button>
+      <h3 id="modalTitle" class="text-xl font-semibold mb-2">Issue Title</h3>
+      <p id="modalMeta" class="text-sm text-text-tertiary mb-3">Meta</p>
+      <div id="modalImages" class="mb-3"></div>
+      <p id="modalDesc" class="text-text-secondary mb-4">Description</p>
+      <div id="modalResolved" class="text-sm text-success-700 mb-3"></div>
+      <div class="flex justify-end space-x-2">
+        <button id="modalResolveBtn" class="btn btn-warning">Resolve</button>
+        <button class="modal-close btn btn-outline">Close</button>
+      </div>
+    </div>
+  </div>
+<script src="../js/admin.js"></script>
+</body>
+</html>

@@ -928,15 +928,15 @@ p {
 /* Button Components */
 
 .btn{
-  height: 0.75rem;
+  min-height: 36px;
   border-radius: 0.75rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  font-weight: 500;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  transition: all 200ms cubic-bezier(0.4,0,0.2,1);
 }
 
 .btn:focus{

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="bg-background flex items-center justify-center h-screen">
+  <div class="card p-6 w-full max-w-sm">
+    <h2 class="text-2xl font-heading mb-4">Admin Login</h2>
+    <form id="adminLogin">
+      <div class="mb-3">
+        <label class="text-sm text-text-secondary">Email</label>
+        <input id="email" class="input w-full" placeholder="admin@example.com" required>
+      </div>
+      <div class="mb-3">
+        <label class="text-sm text-text-secondary">Password</label>
+        <input id="password" type="password" class="input w-full" placeholder="password" required>
+      </div>
+      <div class="text-right">
+        <button class="btn btn-primary" type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+<script>
+async function initAdminLogin(){
+  const status = document.getElementById('adminStatus');
+  try{
+    const cfg = await fetch('/auth/admin-config');
+    if (!cfg.ok) throw new Error('Failed to check admin config');
+    const j = await cfg.json();
+    if (!j.configured) {
+      status.textContent = 'Admin credentials not configured on server. Please add ADMIN_EMAIL and ADMIN_PASSWORD to the .env and restart the server.';
+      status.style.color = 'var(--color-text-error, #b00020)';
+      document.getElementById('adminLogin').querySelector('button[type="submit"]').disabled = true;
+      return;
+    }
+    // prefill masked email for convenience
+    if (j.email) document.getElementById('email').value = j.email;
+  }catch(e){ console.error(e); }
+
+  document.getElementById('adminLogin').addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+    try{
+      const res = await fetch('/auth/admin-login', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ email, password }), credentials: 'include' });
+      if (!res.ok) { const b = await res.json().catch(()=>({})); alert(b.message||'Login failed'); return; }
+      window.location.href = '/admin_dashboard';
+    }catch(err){ console.error(err); alert('Login error'); }
+  });
+}
+
+initAdminLogin();
+</script>
+</script>
+</body>
+</html>
